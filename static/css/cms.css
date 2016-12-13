@@ -1,0 +1,708 @@
+/* === CMS Section === */
+.cms-section {
+    margin-bottom: 40px;
+}
+
+.cms-section-title {
+    margin-bottom: 20px;
+}
+
+.cms-section-title li {
+    float: left;
+    margin-left: 13px;
+    line-height: 1.8em;
+}
+
+.cms-section-title li.first {
+    border: none;
+}
+
+.cms-section-title a, .featured-nav a {
+    color: #384d66;
+}
+
+.cms-section-title li.has-icon {
+    line-height: 35px;
+}
+
+.cms-section-title li .round-icon {
+    height: 35px;
+    width: 35px;
+}
+
+.cms-section-title li.has-icon .icon-plus {
+    line-height: 35px;
+}
+
+.cms-section-title li.has-icon a {
+    font-size: 1.4em;
+    color: #cb5977;
+}
+
+.cms-section-title li.has-icon a:hover {
+    text-decoration: underline;
+}
+
+.cms-section-title a:hover, .featured-nav a:hover {
+    text-decoration: none;
+    color: #cb5977;
+}
+
+.cms-section-title a.color-white, .featured-nav a.color-white {
+    color: #ffffff;
+}
+
+.cms-section-title a.color-white:hover, .featured-nav a.color-white:hover {
+    color: #cb5977;
+}
+
+.cms-section-title .icon-plus, .featured-nav .icon-plus {
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+/* === CMS Item Image Layout === */
+img {
+    border: 0;
+}
+
+.cms-item .main-img,
+.cms-top10 .main-img {
+    display: block;
+    width: 100%; /* depends on colx */
+    height: 240px;
+}
+
+.cms-item.double .main-img {
+    width: 100%; /* depends on colx */
+    height: 610px;
+}
+
+.col-content .col1 .cms-item .main-img {
+    /* Exception because of the 4 column layout... */
+    height: 120px;
+}
+
+.cms-item .main-img.full-stretch {
+    width: 100%;
+    height: 100%;
+}
+
+/* === CMS Item (can be extended by .package, .article etc. classes) === */
+.cms-item {
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.col1 .cms-item,
+.col2 .cms-item {
+    height: 350px;
+}
+
+.col2 .cms-item.double {
+    height: 720px;
+}
+
+.col4 .cms-item {
+    height: 264px;
+    margin-bottom: 20px;
+}
+
+.col4 .cms-item .detail {
+    height: 85px;
+}
+
+.col4 .image-wrapper {
+    height: 176px;
+    overflow: hidden;
+}
+
+.cms-item .link {
+    display: block;
+    height: 100%;
+    color: #333;
+    background: #fff;
+    /*-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;*/
+}
+
+.cms-item:hover .link {
+    text-decoration: none;
+    background-color: #cb5977;
+}
+
+.cms-item:hover .link .title {
+    color: #fff;
+}
+
+.cms-item:hover .link .sub-title {
+    color: #000;
+}
+
+.cms-item:hover .icons .round-icon {
+    background: #fff;
+    color: #cb5977;
+}
+
+.ie .cms-item:hover .icons .round-icon {
+    background: url(../images/ui/ie-round-icon-bg.png) no-repeat left bottom;
+}
+
+.cms-item .main-img {
+    display: block;
+    width: 100%;
+}
+
+.cms-item .link.full-block, .cms-item:hover .link.full-block {
+    background: transparent;
+}
+
+.cms-item .detail {
+    position: relative;
+    height: 110px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.cms-item .caption {
+    position: absolute;
+    top: 20px;
+    padding: 0 20px;
+}
+
+.cms-item .title {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+.cms-item.campaign .title {
+    font-size: 1.2em;
+}
+
+.cms-item .sub-title {
+    margin-top: 2px;
+    font-size: 0.9em;
+}
+
+.cms-item .extra {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin-top: 20px;
+    color: #333333;
+}
+
+.cms-item :hover .extra, .cms-item :hover h3 {
+    color: #FFFFFF;
+}
+
+.cms-item :hover .extra .color-pink_ {
+    color: #FFFFFF;
+}
+
+.cms-item .icons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin-top: 10px;
+}
+
+.col-content .col1 .cms-item {
+    /* Exception because of the 4 column layout... */
+    font-size: 0.8em;
+}
+
+.cms-item .percent-recommended {
+    display: none;
+}
+
+.cms-item .cover {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.cms-item .recommended {
+    height: 70px;
+    width: 100px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    padding-top: 30px;
+}
+
+.cms-item .recommended span {
+    font-size: 3em;
+}
+
+.cms-item a.link:hover .percent-recommended {
+    display: block;
+}
+
+/* === CMS Placeholder === */
+.cms-placeholder {
+    width: 100%;
+    height: 350px;
+    border: 1px solid #3C4851;
+    background: #262F36 url(../images/cms-item-placeholder.png) no-repeat center;
+}
+
+.cms-placeholder a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+/* === CMS Top 10 List === */
+.cms-top10 {
+    position: relative;
+}
+
+.cms-top10 .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+.cms-top10 .title .label {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cms-top10 .title .label strong {
+    display: block;
+    font-size: 1.9em;
+}
+
+.cms-top10 .title h3 {
+    float: left;
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+.cms-top10 .detail {
+    height: 320px;
+}
+
+.cms-top10 ol {
+    margin-left: 60px;
+    padding-top: 20px;
+}
+
+.cms-top10 li {
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+.cms-top10 a {
+    color: #333;
+}
+
+.cms-top10 a:hover {
+    color: #A2526D;
+    text-decoration: none;
+}
+
+/* === CMS Carousel === */
+.cms-carousel .carousel-handler {
+    padding-top: 9px;
+    overflow: hidden;
+}
+
+.cms-carousel .row {
+    height: 360px;
+}
+
+.cms-carousel .prev, .cms-carousel .next {
+    background: transparent url(../images/ui/slideshow-nav-sprite.png) no-repeat 0 0;
+    display: block;
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    margin-top: -10px;
+    top: 45%;
+    z-index: 9950;
+    cursor: pointer;
+}
+
+.cms-carousel .prev {
+    background-position: -88px 0;
+    left: -28px;
+}
+
+.cms-carousel .next {
+    background-position: -154px 0;
+    right: -36px;
+}
+
+.cms-carousel .prev:hover {
+    background-position: -88px -66px;
+}
+
+.cms-carousel .next:hover {
+    background-position: -154px -66px;
+}
+
+.cms-carousel .prev.disabled, .cms-carousel .next.disabled {
+    display: none !important;
+}
+
+.cms-carousel .pagination {
+    float: left;
+    margin-left: 50%;
+    margin-top: 30px;
+}
+
+.cms-carousel .pagination .bullets {
+    float: left;
+    margin-left: -50%;
+}
+
+.cms-carousel .pagination a {
+    display: block;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background: #8297AE;
+    border-radius: 100%;
+}
+
+.cms-carousel .pagination a:last-child {
+    margin-right: 0;
+}
+
+.cms-carousel .pagination .selected {
+    background: #fff;
+}
+
+.cms-carousel .pagination span {
+    display: none;
+}
+
+.cms-carousel .pagination.pink a {
+    background: #fff;
+}
+
+.cms-carousel .pagination.pink .selected {
+    background: #CB5977;
+}
+
+.recently-viewed, article.carousel-container {
+    /* prevents carousel from being selected by double-clicking */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+/* === Some custom items === */
+.cms-custom-invite {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.cms-custom-join {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    /*background:url(../images/promotions/feather-join-zanadu.png) no-repeat center bottom;*/
+}
+
+.cms-custom-join h3 {
+    color: #465562;
+}
+
+.cms-custom-join .content {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    text-align: right;
+}
+
+.cms-custom-join .ribbon-button {
+    right: -41px;
+    font-size: 1.4em;
+}
+
+.cms-custom-join small {
+    font-size: 0.9em;
+}
+
+.cms-custom-join.style-1 {
+    background: url(../images/promotions/photo-join-zanadu1.png) no-repeat center bottom;
+}
+
+.cms-custom-join.style-2 {
+    background: url(../images/promotions/photo-join-zanadu2.png) no-repeat center bottom;
+}
+
+.cms-row .col1 {
+    z-index: 10000;
+}
+
+/* === mini package CMS === */
+.cms-item.minipackage .sub-title-full,
+.cms-item.bundle .sub-title-full {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    background-color: #ebebeb;
+    opacity: 0.83;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    z-index: 0;
+    color: black;
+}
+
+.minipackage .detail {
+    z-index: 110;
+    opacity: 1.0;
+}
+
+.cms-item.minipackage a.link:hover .image-wrapper .sub-title-full,
+.cms-item.bundle a.link:hover .image-wrapper .sub-title-full {
+    display: block;
+}
+
+.cms-item.minipackage .extra span {
+    color: #cb5977;
+    font-size: 1.3em;
+}
+
+.cms-item.minipackage .extra span small {
+    font-size: 0.7em;
+}
+
+.cms-item.minipackage a.link:hover .extra span {
+    color: white;
+}
+
+.cms-item.minipackage .extra {
+    left: auto;
+    right: 15px;
+    bottom: 15px;
+}
+
+.cms-item.minipackage .extra .original, .cms-item.bundle .extra .original {
+    display: inline-block;
+    margin-right: 5px;
+    color: #666;
+    font-size: 0.8em;
+    text-decoration: line-through;
+}
+
+/*== For col5 column ==*/
+.cms-section .col50 {
+    width: 490px;
+}
+
+/* === CMS Item - Map === */
+.cms-item.map {
+    height: 350px; /* Just a default height, change in custom_x.css styles */
+}
+
+.cms-item.map #map {
+    position: relative;
+    width: 100%;
+    /*height:350px;*/
+    height: 100%;
+}
+
+.cms-item.map #map .info-window .main-img {
+    display: block;
+    width: 90px;
+    height: auto;
+}
+
+.cms-item.map #map .info-window .main-img img {
+    width: 100%;
+}
+
+.cms-item.map #map .info-window .price strong {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* === CMS Article === */
+.cms-article .title {
+    font-size: 1.2em;
+    color: #cb5977;
+}
+
+.cms-article .title.old {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #333;
+}
+
+.cms-article .sub-title {
+    font-size: 1em;
+    line-height: 1.4em;
+    height: 1.4em;
+    overflow: hidden;
+}
+
+.cms-article .extra {
+    width: 280px;
+    color: #999;
+    font-size: 0.9em;
+    bottom: 10px;
+}
+
+.col2 .cms-article .extra {
+    width: 620px;
+}
+
+.horizontal-items .sub-title {
+    height: 2.8em;
+}
+
+.horizontal-items .zac .sub-title {
+    height: 4.2em;
+}
+
+.horizontal-items .cms-article .extra {
+    width: 450px;
+}
+
+.horizontal-items .cms-item {
+    height: 128px;
+    margin-bottom: 20px;
+}
+
+.horizontal-items .cms-item a img {
+    height: 128px;
+    width: 170px;
+    float: left;
+}
+
+.horizontal-items .cms-item a .detail {
+    height: 126px;
+    width: 490px;
+    float: left;
+}
+
+.horizontal-items .cms-article .title {
+    height: 1.4em;
+    overflow: hidden;
+}
+
+.col4 .cms-article .title {
+    font-size: 1.1em;
+    height: 2.8em;
+    line-height: 1.4em;
+    overflow: hidden;
+    color: #333;
+}
+
+.col4 .cms-article .caption {
+    padding: 0 15px;
+    top: 10px;
+}
+
+.col4 .cms-article .extra {
+    left: 15px;
+    width: 205px;
+}
+
+.col4 .cms-article .main-img {
+    height: 176px;
+}
+
+.horizontal-items .sub-title-full {
+    display: none !important;
+}
+
+/*== Villa Home Page ==*/
+.villa-banner {
+    position: relative;
+    width: 100%;
+}
+
+.villa-banner > img {
+    width: 100%;
+    padding-bottom: 185px;
+}
+
+.villa-banner-intro {
+    height: 338px;
+    left: 50%;
+    position: absolute;
+    margin: 0 0 0 -510px;
+    bottom: 20px;
+}
+
+.villa-banner-intro .villa-banner-lt {
+    width: 338px;
+    height: 338px;
+    background: url(../images/villa/villa-banner-lt.png) no-repeat center center;
+}
+
+.villa-banner-intro .villa-banner-rt {
+    width: 635px;
+    height: 105px;
+    margin-top: 210px;
+    text-align: center;
+}
+
+/*== Minipackage Index ==*/
+.main-banner-wrapper .round-message {
+    max-height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -183px;
+    margin-left: -510px;
+}
+
+.mini-anchor-link {
+    position: absolute;
+    top: -70px;
+    left: 0;
+}
+
+/*== Hotel Price ==*/
+.cms-item .caption .price {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+.cms-item :hover .price {
+    display: block;
+    color: #FFFFFF;
+}
+
+.cms-item .price small {
+    font-size: 0.6em;
+}
+
+/* === prodct hover === */
+.cms-item :hover div.extra span.color-pink_:nth-child(1) {
+    display: none;
+}
+
+.cms-item :hover div.extra span.color-pink_:nth-child(2) {
+    margin-left: 0;
+}

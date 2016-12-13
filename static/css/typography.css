@@ -1,0 +1,128 @@
+ /* === General === */
+h1,h2,h3,h4,h5,
+p {
+    font-weight:normal;
+    line-height: 1.4em; /* Re-writing line-height from body element for headers (counting form headers font-size) */
+}
+
+h1{
+    font-size:2em;
+}
+
+h2 {
+    font-size:1.8em;
+}
+
+h3 {
+    font-size:1.4em;
+}
+
+h4 {
+    font-size:1.2em;
+}
+
+h5 {
+    font-size:1em;
+}
+
+p {
+    margin-bottom:10px;
+}
+
+a {
+    /* color:#A2526D; */
+    color: #cb5977;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    display:block;
+    padding-left:85px;
+    color:#7F96AD;
+    background:url(../images/ui/double-quotes.png) no-repeat top left;
+}
+
+/* === Text layout helpers === */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align:right;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-left {
+    text-align:left;
+}
+
+/* === Text decoration === */
+.line-through {
+    text-decoration: line-through;
+}
+
+.line-under {
+    text-decoration: underline;
+}
+
+/* === Default colors === */
+.color-default {
+    color:#333;
+}
+
+.color-white {
+    color:#fff;
+}
+
+.color-pink {
+    color:#af5576;
+}
+
+.color-red {
+    color: #ff0000;
+}
+
+.color-pink_ {
+    color: #CB5977;
+}
+
+.color-gray {
+    color:#999;
+}
+
+.color-medium-gray {
+    color: #777777;
+}
+
+.color-blue {
+    color:#7F96AD;
+}
+
+.color-light-blue {
+    color: #95ACC3;
+}
+
+.color-green {
+    color: #57af3a;
+}
+
+.color-light-medium-gray {
+    color: #333333;
+}
+
+.success-msg {
+    color:#C63435;
+    font-size:12px;
+}
+
+/* === block === */
+.inline-block {
+    display: inline-block !important;
+}

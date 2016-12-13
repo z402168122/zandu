@@ -1,0 +1,363 @@
+/* === Basic reset === */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+a > img {
+    border: none;
+}
+
+header, footer, article, section, nav, aside {
+    display: block;
+    position: relative;
+}
+
+.ie a img {
+    border: none;
+}
+
+/* === Font Face === */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat-Regular'), url(../public/fonts/Montserrat400.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat-Bold'), url(../public/fonts/Montserrat700.woff) format('woff');
+}
+
+/* === General === */
+body, html {
+    min-width: 1100px; /* Dirty temporary hack that even doesn't work well for body and html behaving stupidly */
+}
+
+body {
+    color: #333;
+    font-size: 14px;
+    font-family: 'Montserrat', 'STHeiti', 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.4em;
+}
+
+/* === Top Loading Bar === */
+.top-loading-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background: rgba(142, 168, 195, 1.0);
+    color: white;
+    font-weight: bold;
+    z-index: 11000;
+}
+
+/* === Bottom Loading Bar === */
+.bottom-loading-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background: rgba(142, 168, 195, 1.0);
+    color: white;
+    font-weight: bold;
+    z-index: 11000;
+}
+
+/* === Header === */
+.member-yes header.bg-image-clouds {
+    background-image: url(../images/backgrounds/bg-image-clouds-public.jpg);
+    background-size: cover;
+}
+
+.member-no header.bg-image-clouds {
+    background-image: url(../images/backgrounds/bg-image-clouds-guest.jpg);
+    background-size: cover;
+}
+
+header .search {
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+header .search .input-text {
+    width: 220px;
+    margin-top: 2px;
+    margin-right: 15px;
+
+}
+
+header .search .input-text:hover {
+    border: 1px solid #A2526D;
+}
+
+header .guest-info,
+header .guest-info a {
+    color: #fff;
+}
+
+header .guest-info a:hover {
+    color: #A2526D;
+    text-decoration: none;
+}
+
+header .guest-info .tooltip {
+
+}
+
+header .member-info {
+    color: #5b6576;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+header .avatar {
+    width: 80px;
+    height: 80px;
+
+}
+
+header .member-info p {
+    margin-bottom: 3px;
+}
+
+header .member-info .nickname {
+    font-size: 1.3em;
+}
+
+header .input-text {
+    background: #fff; /* old browsers */
+    background: rgba(255, 255, 255, 0.45);
+    /*border:1px solid #DEDFD7;*/
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px rgba(131, 131, 131, 0.4), inset -1px 1px 4px rgba(232, 232, 232, 0.3);
+}
+
+header .input-text:focus {
+    border: 1px solid #af5576;
+}
+
+header .help-info:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header .help-info .tooltip {
+    width: 180px;
+    top: 25px;
+    left: auto;
+    right: 0;
+}
+
+header .help-info .tooltip .arrow {
+    left: auto;
+    right: 40px;
+}
+
+/* === Footer === */
+
+footer .footer_bg {
+    background: url(../images/footer_bg.png) no-repeat, -webkit-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(../images/footer_bg.png) no-repeat, -o-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(../images/footer_bg.png) no-repeat, -moz-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(../images/footer_bg.png) no-repeat, linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background-position: right top;
+    /*background-size: 925px 660px;*/
+}
+
+@media (max-width: 1280px) {
+    footer .footer_bg {
+        background-position: 600px 0;
+    }
+}
+
+footer .press {
+    padding: 60px 0;
+}
+
+footer .press .snippet {
+    margin-bottom: 20px;
+}
+
+footer .press .snippet p,
+footer .press .snippet h4 {
+    margin: 0;
+}
+
+footer .press .snippet:nth-child(1) img {
+    display: block;
+    margin-bottom: 20px;
+}
+
+footer .press .snippet:nth-child(1) p {
+    display: block;
+    color: #6D6D6D;
+}
+
+footer .press .snippet:nth-child(2) h4 {
+    font-weight: bold;
+}
+
+footer .press .snippet:nth-child(2) p {
+    font-weight: 400;
+}
+
+footer .press .snippet:nth-child(3) p {
+    display: block;
+    color: #6D6D6D;
+}
+
+footer .contact {
+    padding: 40px 0;
+}
+
+footer .iphone-qr {
+    display: block;
+    position: relative;
+    width: 131px;
+    height: 145px;
+    background: url("../images/footer_qr_code.jpg") no-repeat;
+}
+
+footer .iphone-qr img {
+    display: block;
+    position: absolute;
+    top: -70px;;
+    left: -60px;
+}
+
+footer .nav-section {
+    margin-left: 80px;
+}
+
+footer h4 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+footer .tooltip {
+    top: 30px;
+    left: 150px;
+    color: #fff;
+    background: rgba(162, 82, 109, 0.59);
+}
+
+footer .tooltip .arrow-left {
+    position: absolute;
+    top: 45%;
+    left: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid rgba(162, 82, 109, 0.59);
+}
+
+footer li {
+    margin: 3px 0;
+}
+
+footer li a, footer li {
+    color: #999;
+}
+
+footer li a:hover {
+    color: #af5576;
+    text-decoration: none;
+}
+
+footer li.color-green {
+    color: #75b976;
+}
+
+footer li img {
+    vertical-align: sub;
+}
+
+footer .phone-number span {
+    display: inline-block;
+    min-width: 108px;
+}
+
+footer .phone-number a {
+    font-size: 1.3em;
+}
+
+footer .social small a {
+    font-size: 1.3em;
+}
+
+footer .social .icons li {
+    float: left;
+    margin-right: 10px;
+}
+
+footer .social .icons li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+footer .social .weibo a {
+    line-height: 28px;
+    font-size: 1.2em;
+    background: #C36F5E;
+}
+
+footer .social .youku a {
+    line-height: 28px;
+    font-size: 0.8em;
+    background: #96C3E0;
+}
+
+footer .nav-section .icon-wechat {
+    font-size: 1.6em;
+}
+
+footer .copyright.bg-image-clouds {
+    background-position: 0 -150px;
+}
+
+footer p.color-white {
+    font-size: 0.9em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+footer p.color-white img {
+    vertical-align: text-bottom;
+    margin-bottom: -4px;
+}
+
+/* == Error Summary === */
+.errorSummary {
+    margin-bottom: 40px;
+    padding: 20px 40px;
+    text-align: left;
+    border: 3px solid #ff97a2;
+    background: pink;
+}
+
+.errorSummary ul {
+    margin-left: 20px;
+}
+
+.errorSummary p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.required {
+    color: #A2526D;
+}

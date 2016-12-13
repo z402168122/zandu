@@ -1,0 +1,720 @@
+/* === Picture corners === */
+.pic-corner {
+    position: absolute;
+    width: 81px;
+    height: 66px;
+    background-image: url(../images/picture-corners-sprite.png);
+    background-repeat: no-repeat;
+    z-index: 9998;
+}
+
+.pic-corner.dark-left {
+    bottom: -13px;
+    left: -20px;
+    background-position: 0 top;
+}
+
+.pic-corner.dark-right {
+    top: -13px;
+    right: -20px;
+    background-position: 0 -66px;
+}
+
+/* === Buttons === */
+.button {
+    display: block;
+    padding: 8px 30px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #A46F7B;
+    cursor: pointer;
+
+    /* The default color for buttons */
+    background: #d78393; /* Old browsers */
+    background: -moz-linear-gradient(top, #d78393 0%, #b74966 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d78393), color-stop(100%, #b74966)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d78393 0%, #b74966 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d78393 0%, #b74966 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d78393 0%, #b74966 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #d78393 0%, #b74966 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d78393', endColorstr='#b74966', GradientType=0); /* IE6-9 */
+}
+
+.button.bg-gr-gray {
+    color: #999;
+    text-shadow: 0 1px 1px #fff;
+    border: 0;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+.button.blue {
+    padding: 8px 45px;
+    /* The default color for buttons */
+    background: #77a4d0; /* Old browsers */
+    background: -moz-linear-gradient(top, #77a4d0 0%, #4a87b8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #77a4d0), color-stop(100%, #4a87b8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #77a4d0 0%, #4a87b8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #77a4d0 0%, #4a87b8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #77a4d0 0%, #4a87b8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #v 0%, #4a87b8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a4d0', endColorstr='#4a87b8', GradientType=0); /* IE6-9 */
+}
+
+/* === Ribbon Buttons === */
+.ribbon-button {
+    display: block;
+    position: relative;
+    right: -12px; /* just to make sure fold is out, but need to edit in custom style if you have padding etc */
+    height: 44px;
+    padding: 0 20px;
+    line-height: 44px;
+}
+
+.ribbon-button:hover {
+    text-decoration: none;
+}
+
+.ribbon-button .tail,
+.ribbon-button .fold {
+    position: absolute;
+    background: url(../images/ui/ribbon-button-sprite.png) no-repeat;
+}
+
+.ribbon-button .tail {
+    top: 0;
+    left: -17px;
+    width: 17px;
+    height: 44px;
+}
+
+.ribbon-button .fold {
+    bottom: -9px;
+    right: 0;
+    width: 12px;
+    height: 9px;
+}
+
+.ribbon-button.light-blue {
+    background: #c1d1df;
+}
+
+.ribbon-button.light-blue .tail {
+    background-position: 0 top;
+}
+
+.ribbon-button.light-blue .fold {
+    background-position: 0 -44px;
+}
+
+.ribbon-button.blue {
+    background: #a3c1d7;
+}
+
+.ribbon-button.blue:hover {
+    background: #b0cfe4;
+}
+
+.ribbon-button.blue .tail {
+    background-position: -17px 0;
+}
+
+.ribbon-button.blue:hover .tail {
+    background-position: -17px -106px;
+}
+
+.ribbon-button.blue .fold {
+    background-position: -12px -44px;
+}
+
+.ribbon-button.dark-blue {
+    background: #629eda;
+}
+
+.ribbon-button.dark-blue .tail {
+    background-position: -102px 0;
+}
+
+.ribbon-button.dark-blue .fold {
+    background-position: 0 -44px;
+}
+
+.ribbon-button.light-pink {
+    background: #d9c1d5;
+}
+
+.ribbon-button.light-pink .tail {
+    background-position: -34px 0;
+}
+
+.ribbon-button.light-pink .fold {
+    background-position: -24px -44px;
+}
+
+.ribbon-button.pink {
+    background: #c85674;
+}
+
+.ribbon-button.pink:hover {
+    background: #DE728F; /* Old browsers */
+    background: -moz-linear-gradient(left, #de728f 0%, #c45975 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #de728f), color-stop(100%, #c45975)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #de728f 0%, #c45975 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #de728f 0%, #c45975 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #de728f 0%, #c45975 100%); /* IE10+ */
+    background: linear-gradient(to right, #de728f 0%, #c45975 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#de728f', endColorstr='#c45975', GradientType=1); /* IE6-9 */
+}
+
+.ribbon-button.pink .tail {
+    background-position: -51px 0;
+}
+
+.ribbon-button.pink:hover .tail {
+    background-position: -51px -106px;
+}
+
+.ribbon-button.pink .fold {
+    background-position: -36px -44px;
+}
+
+.ribbon-button.dark-pink {
+    background: #a680a0;
+}
+
+.ribbon-button.dark-pink:hover {
+    background: #bc97b6;
+}
+
+.ribbon-button.dark-pink .tail {
+    background-position: -68px 0;
+}
+
+.ribbon-button.dark-pink:hover .tail {
+    background-position: -68px -106px;
+}
+
+.ribbon-button.dark-pink .fold {
+    background-position: -48px -44px;
+}
+
+.ribbon-button.white {
+    background: #fff;
+}
+
+.ribbon-button.white:hover {
+    background: #fff;
+}
+
+.ribbon-button.white .tail {
+    background-position: -85px 0;
+}
+
+.ribbon-button.white:hover .tail {
+    background-position: -85px -106px;
+}
+
+.ribbon-button.white .fold {
+    background-position: -48px -44px;
+}
+
+/* === Tabs === */
+.tabs-control {
+    padding: 0 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.tabs-control a {
+    float: left;
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    background: url(../images/ui/tab-separator.png) no-repeat right top;
+}
+
+.tabs-control a:hover {
+    text-decoration: none;
+}
+
+.tabs-control a.active {
+    margin-top: -5px;
+    padding-top: 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: none;
+}
+
+.tabs-control a.last {
+    background-image: none;
+}
+
+.tabs-wrap .tab {
+    /*display:none;*/
+}
+
+.tabs-wrap .tab.active {
+    display: block !important;
+}
+
+/* === Tabs themes === */
+.tabs-wrap.pink .tabs-control a.active {
+    color: #af5576;
+    background-color: #fff;
+}
+
+.tabs-wrap.pink .tab {
+    background: #fff;
+}
+
+.tabs-wrap.pink .tabs-control a:hover {
+    background: #e58ba5; /* Old browsers */
+    background: -moz-linear-gradient(top, #e58ba5 0%, #c65979 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e58ba5), color-stop(100%, #c65979)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e58ba5 0%, #c65979 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e58ba5 0%, #c65979 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e58ba5 0%, #c65979 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e58ba5 0%, #c65979 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e58ba5', endColorstr='#c65979', GradientType=0); /* IE6-9 */
+}
+
+.tabs-wrap.pink .tabs-control a.active:hover {
+    background: #fff;
+}
+
+.tabs-wrap.blue .tabs-control a.active {
+    color: #333;
+    background-color: #cbdce8;
+}
+
+.tabs-wrap.blue .tab {
+    background: #cbdce8;
+}
+
+/* === Separators === */
+.separator {
+    width: 100%;
+    height: 0;
+    text-indent: -9000px;
+    /*font-size:0;*/
+    border: none;
+    background: none;
+}
+
+.separator.dashed {
+    border-bottom: 1px dashed #e8e8e8;
+}
+
+.separator.dotted {
+    height: 1px;
+    background: url(../images/ui/separator-dotted.png) repeat-x;
+}
+
+.separator.solid {
+    height: 1px;
+    background: #c8c8c8;
+}
+
+.separator.has-label {
+    position: relative;
+    text-indent: 1px;
+}
+
+.separator .label {
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    font-size: 1.2em;
+}
+
+.separator .label span {
+    display: block;
+    position: relative;
+    left: -50%;
+    padding: 0 25px;
+    background: #fff;
+}
+
+/* === Shades and Shadows === */
+.bottom-shade {
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    width: 390px;
+    height: 23px;
+    background: url(../images/bottom-shade.png) no-repeat center;
+    z-index: 100;
+}
+
+.bottom-shade-large {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: url(../images/bottom-shade-large.png) no-repeat center;
+    z-index: -1;
+}
+
+/* === Avatars === */
+.avatar {
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 8px rgba(114, 114, 114, 0.60);
+    border-radius: 100%;
+}
+
+.avatar .avatar-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+/* === Expandable === */
+.expandable .expand {
+    display: none;
+}
+
+.expandable .expand.open {
+    display: block;
+}
+
+/* === Masks === */
+.overlay-mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+/* === Sticky Panel === */
+.sticky-panel {
+    z-index: 9997;
+}
+
+/* === Calendar === */
+.calendar-el {
+    position: relative;
+}
+
+.cal-input {
+    position: relative;
+}
+
+.cal-input input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+.cal-input .input-text {
+    padding-left: 45px;
+    margin-right: 20px;
+}
+
+.cal-input .icon-calendar {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #666666;
+}
+
+/* === Loader === */
+.loader {
+    display: none;
+}
+
+/* === Hidden === */
+.hidden {
+    display: none;
+}
+
+/* === UI Buttons === */
+.btn-expand {
+    cursor: pointer;
+}
+
+/* === Sale Tag === */
+.sale-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 121px;
+    height: 118px;
+    z-index: 90;
+}
+
+.sale-tag-flash {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 97px;
+    height: 94px;
+    padding-top: 13px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
+    background: url(../images/ui/sale_tags/sales-tag-bg.png) no-repeat right top;
+    z-index: 9999;
+}
+
+.sale-tag-flash .line0 {
+    margin-bottom: 1px;
+    font-size: 0.8em;
+}
+
+.sale-tag-flash .line1 {
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+.sale-tag-flash .line2 .count {
+    font-size: 1.3em;
+}
+
+/* === back to top button === */
+.btn-back-to-top {
+    width: 99px;
+    height: 42px;
+    left: 50%;
+    margin-left: -50px;
+    padding-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    background-color: #e5f2f8;
+    border-radius: 48px 48px 0px 0px
+}
+
+.btn-back-to-top:before {
+    content: '';
+    display: inline-block;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #8ca6c1;
+}
+
+.btn-back-to-top:after {
+    content: '返回顶部';
+    display: block;
+    font-size: 0.8em;
+    color: #8fa7bf;
+}
+
+.back-to-top-absolute {
+    position: absolute;
+    top: -48px;
+    z-index: 10;
+}
+
+.back-to-top-fixed {
+    position: fixed;
+    bottom: -48px;
+    z-index: 999;
+}
+
+/* === Lists === */
+ul.no-bullets {
+    list-style: none;
+}
+
+ul.simple-bullets li {
+    list-style: none;
+    padding-left: 10px;
+    background: url(../public/images/ui/list-bullet-1.png) no-repeat 0 8px;
+    font-family: "Helvetica", "Microsoft YaHei", Arial, sans-serif;
+    *font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+
+ul.feather-bullets {
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+ul.feather-bullets li {
+    padding: 6px 0 6px 40px;
+    list-style: none;
+    background: url(../images/ui/list-bullet-feather.png) no-repeat 0 5px;
+}
+
+ul.feather-bullets-white li {
+    padding: 6px 0 6px 40px;
+    list-style: none;
+    background: url(../images/ui/list-bullet-feather-white.png) no-repeat 0 5px;
+}
+
+/* === Tooltips === */
+.has-tooltip {
+    position: relative;
+}
+
+.has-tooltip:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: -75px;
+    width: 150px;
+    padding: 10px;
+    color: #A2526D;
+    font-size: 0.9em;
+    background: #fff;
+    box-shadow: 2px 2px 5px rgba(80, 80, 80, 0.3);
+    z-index: 1000000;
+}
+
+.tooltip .arrow {
+    position: absolute;
+    top: -5px;
+    left: 85px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+.loading {
+    background-color: #eeeeee;
+    background-image: url('../images/ui/loader_transparent_small.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+.loading * {
+    opacity: .8;
+}
+
+/* === Round Icon === */
+.round-icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    background: #cb5977;
+    border-radius: 100%;
+}
+
+a.round-icon:hover {
+    text-decoration: none;
+}
+
+.ie .round-icon {
+    background: url(../images/ui/ie-round-icon-bg.png) no-repeat top left;
+}
+
+.round-icon .icon-time {
+    font-size: 1.8em;
+}
+
+.round-icon .icon-arrow-right {
+    padding-top: 1px;
+    font-size: 1.1em;
+}
+
+.round-icon .icon-zanadu-bird {
+    padding-left: 1px;
+    font-size: 1.4em;
+}
+
+.round-icon .icon-airplane, .round-icon .icon-sig-trip {
+    font-size: 1.3em;
+}
+
+.round-icon .icon-bundle, .round-icon .icon-villa {
+    font-size: 1.5em;
+}
+
+.round-icon .icon-cruise {
+    font-size: 1.7em;
+    padding-left: 1px;
+}
+
+.round-icon .tooltip {
+    top: 125%;
+    left: -45px;
+    width: 100px;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.round-icon .tooltip .arrow {
+    position: absolute;
+    top: -5px;
+    left: 55px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+/** GOOGLE MAPS STYLING ***/
+.gm-style-iw[style] {
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+.gm-style-iw .main-img {
+    margin-right: 10px !important;
+}
+
+.gm-style-iw .price {
+    /* hide pricing in map for hotel */
+    display: none !important;
+}
+
+/** Live Chat styling **/
+.live-chat-link {
+    position: fixed;
+    top: 50%;
+    margin-top: -35px;
+    right: 0;
+    z-index: 9998;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background-color: #C15672;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+.live-chat-link:before {
+    font-family: 'Zanadu-icons';
+    content: "\54";
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.live-chat-link:after {
+    content: '在线咨询';
+    display: block;
+    font-size: 0.9em;
+}
+
+/*== For partner advertisement ==*/
+.ad-tag {
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #ddd;
+    padding: 0 6px;
+    display: inline-block;
+}

@@ -1,0 +1,15 @@
+
+.container {
+    position: relative;
+    width: 1020px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+
+.cms-section-title {
+    margin-bottom: 20px;
+}
+.col3 {
+    width: 1000px;
+}
