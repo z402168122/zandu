@@ -169,10 +169,10 @@ header .help-info .tooltip .arrow {
 /* === Footer === */
 
 footer .footer_bg {
-    background: url(../images/footer_bg.png) no-repeat, -webkit-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(../images/footer_bg.png) no-repeat, -o-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(../images/footer_bg.png) no-repeat, -moz-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(../images/footer_bg.png) no-repeat, linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(/static/img/footer_bg.png) no-repeat, -webkit-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(/static/img/footer_bg.png) no-repeat, -o-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(/static/img/footer_bg.png) no-repeat, -moz-linear-gradient(0deg, #FFFFFF, #C1DDED);
+    background: url(/static/img/footer_bg.png) no-repeat, linear-gradient(0deg, #FFFFFF, #C1DDED);
     background-position: right top;
     /*background-size: 925px 660px;*/
 }
@@ -228,7 +228,7 @@ footer .iphone-qr {
     position: relative;
     width: 131px;
     height: 145px;
-    background: url("../images/footer_qr_code.jpg") no-repeat;
+    background: url("/static/img/footer_qr_code.jpeg") no-repeat;
 }
 
 footer .iphone-qr img {
