@@ -19,20 +19,6 @@ header, footer, article, section, nav, aside {
     border: none;
 }
 
-/* === Font Face === */
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat-Regular'), url(../public/fonts/Montserrat400.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Montserrat-Bold'), url(../public/fonts/Montserrat700.woff) format('woff');
-}
 
 /* === General === */
 body, html {
@@ -76,16 +62,6 @@ body {
     z-index: 11000;
 }
 
-/* === Header === */
-.member-yes header.bg-image-clouds {
-    background-image: url(../images/backgrounds/bg-image-clouds-public.jpg);
-    background-size: cover;
-}
-
-.member-no header.bg-image-clouds {
-    background-image: url(../images/backgrounds/bg-image-clouds-guest.jpg);
-    background-size: cover;
-}
 
 header .search {
     margin-left: 80px;
@@ -169,12 +145,7 @@ header .help-info .tooltip .arrow {
 /* === Footer === */
 
 footer .footer_bg {
-    background: url(/static/img/footer_bg.png) no-repeat, -webkit-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(/static/img/footer_bg.png) no-repeat, -o-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(/static/img/footer_bg.png) no-repeat, -moz-linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background: url(/static/img/footer_bg.png) no-repeat, linear-gradient(0deg, #FFFFFF, #C1DDED);
-    background-position: right top;
-    /*background-size: 925px 660px;*/
+    
 }
 
 @media (max-width: 1280px) {

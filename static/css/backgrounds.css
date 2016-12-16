@@ -56,31 +56,7 @@
     background-repeat:no-repeat;
 }
 
-.bg-image-white-light {
-    background-image:url(../images/backgrounds/bg-image-white-light.png);
-    background-position:top center;
-    background-repeat:no-repeat;
-}
 
-.bg-image-black-light {
-    background-image:url(../images/backgrounds/bg-image-black-light.png);
-    background-position:top center;
-    background-repeat:no-repeat;
-}
-
-/* === Pattern background === */
-.bg-pattern-diag {
-    background-image:url(../images/backgrounds/bg-pattern-diag.png);
-    background-repeat: repeat;
-}
-
-/* === Checkout page register/login background === */
-.bg-image-checkout-register-clouds {
-    background-image:url(../images/backgrounds/bg-image-clouds-checkout-guest.jpg);
-    background-position:top center;
-    background-size:100%;
-    background-repeat:no-repeat;
-}
 
 
 /* === Gradients === */
