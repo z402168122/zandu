@@ -129,27 +129,15 @@ img {
     transition: all 0.1s ease-in-out;*/
 }
 
-.cms-item:hover .link {
-    text-decoration: none;
-    background-color: #cb5977;
+.cms-item:hover .show {
+   
 }
 
-.cms-item:hover .link .title {
-    color: #fff;
+.cms-item:hover .hide {
+   
 }
 
-.cms-item:hover .link .sub-title {
-    color: #000;
-}
 
-.cms-item:hover .icons .round-icon {
-    background: #fff;
-    color: #cb5977;
-}
-
-.ie .cms-item:hover .icons .round-icon {
-    background: url(../images/ui/ie-round-icon-bg.png) no-repeat left bottom;
-}
 
 .cms-item .main-img {
     display: block;
@@ -171,12 +159,12 @@ img {
 
 .cms-item .caption {
     position: absolute;
-    top: 20px;
+    top: 10px;
     padding: 0 20px;
 }
 
 .cms-item .title {
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 1.4em;
 }
 
@@ -186,8 +174,14 @@ img {
 
 .cms-item .sub-title {
     margin-top: 2px;
-    font-size: 0.9em;
+    font-size: 1em;
 }
+
+.cms-item .time {
+    margin-top: 5px;
+    font-size: 0.8em;
+}
+
 
 .cms-item .extra {
     position: absolute;
@@ -197,9 +191,6 @@ img {
     color: #333333;
 }
 
-.cms-item :hover .extra, .cms-item :hover h3 {
-    color: #FFFFFF;
-}
 
 .cms-item :hover .extra .color-pink_ {
     color: #FFFFFF;
