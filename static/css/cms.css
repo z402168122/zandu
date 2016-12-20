@@ -129,12 +129,16 @@ img {
     transition: all 0.1s ease-in-out;*/
 }
 
+.cms-item .main-img.show {
+   display:none;
+}
+
 .cms-item:hover .show {
-   
+   display:block;
 }
 
 .cms-item:hover .hide {
-   
+   display:none;
 }
 
 
@@ -179,6 +183,7 @@ img {
 
 .cms-item .time {
     margin-top: 5px;
+    line-height: 2em;
     font-size: 0.8em;
 }
 
