@@ -135,10 +135,12 @@ img {
 
 .cms-item:hover .show {
    display:block;
+   text-decoration:none;
 }
 
 .cms-item:hover .hide {
    display:none;
+   text-decoration:none;
 }
 
 
