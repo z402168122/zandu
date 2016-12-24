@@ -133,12 +133,12 @@ img {
    display:none;
 }
 
-.cms-item:hover .show {
+.cms-item a:hover .show {
    display:block;
    text-decoration:none;
 }
 
-.cms-item:hover .hide {
+.cms-item a:hover .hide {
    display:none;
    text-decoration:none;
 }

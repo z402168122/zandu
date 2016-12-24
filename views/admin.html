@@ -42,74 +42,53 @@
 	        <div class="clearfix"></div>
 	    </div>
 	    <div class="cms-carousel">
-	    	<div class="caroufredsel_wrapper" style="width: 1020px; height: 400px; margin: 0px; overflow: hidden;">
-	    		<div class="carousel-handler">
-	    			<div class="row left">
-	    				<div class="col1">
-	    					<div class="cms-item ">
-		                        <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-						            <div class="relative">
-						                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-						                <div class="main-img scroll-loading show">
-						                	<img src="/static/img/code.jpg"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
-						                	<div style="text-align: center;text-decoration:none;">
-						                		<span>扫码了解线路详情</span>
-						                	</div>
-						                </div>
-						                
-		                          </div>
-					                <div class="detail">
-				               			 <div class="caption">
-				                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-				                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-											<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-		                        		</div>
-				            		</div>
-					            </a>    
-				        		<div class="admin" >
-				        		{{ if .admin }}
-				        			<button onclick="show_edit(0,0)" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
-				        		{{ end }}
-				        		</div>
-				        	</div>
-                   		</div>
-                   		<div class="col1">
-                   			<div class="cms-item ">
-		                        <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-						            <div class="relative">
-						                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-						                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-	                                </div>
-					                <div class="detail">
-				               			 <div class="caption">
-				                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-				                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-											<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-		                        		</div>
-				            		</div>
-					            </a>       
-            				</div>
-                   		</div>
-	    				<div class="col1">
-    						 <div class="cms-item ">
-                        		<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-						            <div class="relative">
-						                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-						                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-	                                </div>
-					                <div class="detail">
-				               			 <div class="caption">
-				                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-				                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-											<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-		                        		</div>
-				            		</div>
-					            </a>      
-	       					 </div>
-	                    </div>
-	    			</div>
-	    		</div>
-	    	</div>
+	    	{{range $index, $elem := .first}}
+	    	<div class="col1">
+				<div class="cms-item elem_0_{{ $index }}">
+                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+			            <div class="relative">
+			            	{{with $elem.Img }}
+			                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{else}}
+			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{end}}
+                      </div>
+		                <div class="detail">
+	               			 <div class="caption">
+	               			 	{{with $elem.Title }}
+	               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+		                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+									<span class="time elem_note">{{ $elem.Note }}</span>
+	               			 	{{else}}
+	               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+		                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+									<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+	               			 	{{end}}
+                    		</div>
+	            		</div>
+		            </a>    
+	        		<div class="admin" >
+	        		{{ if $.admin }}
+	        			<button onclick="show_edit(0,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+	        		{{ end }}
+	        		</div>
+	        	</div>
+       		</div>
+       		{{end}}
+       		<div class="clearfix"></div>
+       		<div style="height: 50px;width: 100%;"></div>
 	    </div>
 	  </article>
 	
@@ -124,57 +103,57 @@
             <div class="clearfix"></div>
         </div>
         <div class="cms-row margin-bottom-20">
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+        	
+        	{{range $index, $elem := .second}}
+        	
+        		<div class="col1">
+				<div class="cms-item elem_1_{{ $index }}">
+                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
 			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
+			            	{{with $elem.Img }}
+			                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{else}}
+			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{end}}
+                      </div>
 		                <div class="detail">
 	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
+	               			 	{{with $elem.Title }}
+	               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+		                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+									<span class="time elem_note">{{ $elem.Note }}</span>
+	               			 	{{else}}
+	               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+		                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+									<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+	               			 	{{end}}
                     		</div>
 	            		</div>
 		            </a>    
-        		</div>
-        	</div>
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
-		                <div class="detail">
-	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-                    		</div>
-	            		</div>
-		            </a>    
-        		</div>
-        	</div>
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
-		                <div class="detail">
-	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-                    		</div>
-	            		</div>
-		            </a>    
-        		</div>
-        	</div>
+	        		<div class="admin" >
+	        		{{ if $.admin }}
+	        			<button onclick="show_edit(1,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+	        		{{ end }}
+	        		</div>
+	        	</div>
+       		</div>
+			    
+			{{end}}
+
+        	
+        	
         	<div class="clearfix"></div>
         </div>
 	</article>
@@ -190,57 +169,53 @@
             <div class="clearfix"></div>
         </div>
         <div class="cms-row margin-bottom-20">
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+        	{{range $index, $elem := .third}}
+        	
+        		<div class="col1">
+				<div class="cms-item elem_2_{{ $index }}">
+                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
 			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
+			            	{{with $elem.Img }}
+			                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{else}}
+			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+			                <div class="main-img scroll-loading show">
+			                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+			                	<div style="text-align: center;text-decoration:none;">
+			                		<span>扫码了解线路详情</span>
+			                	</div>
+			                </div>
+			                {{end}}
+                      </div>
 		                <div class="detail">
 	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
+	               			 	{{with $elem.Title }}
+	               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+		                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+									<span class="time elem_note">{{ $elem.Note }}</span>
+	               			 	{{else}}
+	               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+		                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+									<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+	               			 	{{end}}
                     		</div>
 	            		</div>
 		            </a>    
-        		</div>
-        	</div>
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
-		                <div class="detail">
-	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-                    		</div>
-	            		</div>
-		            </a>    
-        		</div>
-        	</div>
-        	<div class="col1 equal-height" style="display: block; height: 350px;">
-        		<div class="cms-item  bundle">
-        			<a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-			            <div class="relative">
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide"  width="320" height="240">
-			                <img src="/static/img/code.jpg" class="main-img scroll-loading show"  width="320" height="240">
-                        </div>
-		                <div class="detail">
-	               			 <div class="caption">
-	                    		<h3 class="title">糖丸贡嘎环线，入门级</h3>
-	                    		<div class="sub-title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-								<span class="time">出行时间：5月2日、6月3日、7月2日</span>
-                    		</div>
-	            		</div>
-		            </a>    
-        		</div>
-        	</div>
+	        		<div class="admin" >
+	        		{{ if $.admin }}
+	        			<button onclick="show_edit(2,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+	        		{{ end }}
+	        		</div>
+	        	</div>
+       		</div>
+			    
+			{{end}}
         	<div class="clearfix"></div>
         </div>
 	</article>
@@ -312,24 +287,24 @@
 			<tr>
 				<td style="text-align: right;padding-right: 15px;">标题:</td>
 				<td colspan="2">
-					<input type="text" style="width: 300px;" />
+					<input type="text" id="form_title" style="width: 300px;" />
 				</td>
 			</tr>
 			<tr>
 				<td style="text-align: right;padding-right: 15px;">副标题:</td>
 				<td colspan="2">
-					<input type="text" style="width: 300px;" />
+					<input type="text" id="form_sub_title" style="width: 300px;" />
 				</td>
 			</tr>
 			<tr>
 				<td style="text-align: right;padding-right: 15px;">备注:</td>
 				<td colspan="2">
-					<input type="text" style="width: 300px;" />
+					<input type="text" id="form_note" style="width: 300px;" />
 				</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="text-align: center;">
-					<button class="ui-button ui-corner-all ui-widget" >保存数据</button>
+					<button onclick="save_data(this)" class="ui-button ui-corner-all ui-widget" >保存数据</button>
 				</td>
 			</tr>
 		</table>
@@ -351,7 +326,8 @@
 		return id;
 	}
     	
-    	
+    var curr_i = 0;
+    var curr_j = 0;
 	function upload_img(el){
 		var id = get_or_create_id(el);
 			$.ajaxFileUpload({
@@ -382,9 +358,55 @@
 		      width: 600,
 		      modal: true
 		    });
-    	function show_edit(){
+    	function show_edit(i,j){
+    		curr_i = i;
+    		curr_j = j;
+    		
+    		var obj = $("."+"elem_"+i+"_"+j);
+    		var elem_img = obj.find(".elem_img").attr("src");
+    		var elem_code = obj.find(".elem_code").attr("src");
+    		var elem_title = obj.find(".elem_title").html();
+    		var elem_sub_title = obj.find(".elem_sub_title").html();
+    		var elem_note = obj.find(".elem_note").html();
+    		
+    		$("#form_img").attr("src",elem_img);
+    		$("#form_code").attr("src",elem_code);
+    		$("#form_title").val(elem_title);
+    		$("#form_sub_title").val(elem_sub_title);
+    		$("#form_note").val(elem_note);
+    	
     		dialog.dialog("open");
             //$('#fm1').form('load',row);
+    	}
+    	function save_data(){
+    		var elem_img = $("#form_img").attr("src");
+    		var elem_code = $("#form_code").attr("src");
+    		var elem_title = $("#form_title").val();
+    		var elem_sub_title = $("#form_sub_title").val();
+    		var elem_note = $("#form_note").val();
+    		data = {}
+    		data["img"] = elem_img;
+    		data["code"] = elem_code;
+    		data["title"] = elem_title;
+    		data["sub_title"] = elem_sub_title;
+    		data["note"] = elem_note;
+    		data["type"] = curr_i;
+    		data["index"] = curr_j;
+    		$.post("/admin/update",data,function(data){
+    				if(data.err == ""){
+			    		var obj = $("."+"elem_"+curr_i+"_"+curr_j);
+			    		 obj.find(".elem_img").attr("src",elem_img);
+			    		 obj.find(".elem_code").attr("src",elem_code);
+			    		 obj.find(".elem_title").html(elem_title);
+			    		 obj.find(".elem_sub_title").html(elem_sub_title);
+			    		 obj.find(".elem_note").html(elem_note);
+    		
+    					alert("修改成功");
+    					dialog.dialog("close");
+    				}else{
+    					alert(data.err)
+    				}
+    		},'json')
     	}
     </script>
 {{end}}
