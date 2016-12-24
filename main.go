@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"zhangjl/zanadu/basic"
 	"zhangjl/zanadu/models"
 	_ "zhangjl/zanadu/routers"
 
@@ -10,7 +9,6 @@ import (
 )
 
 func main() {
-	basic.InitLogger()
 
 	filename := "data/db"
 
@@ -18,7 +16,7 @@ func main() {
 	hd.Path = filename
 	err := hd.Init()
 	if err != nil {
-		basic.Log.Error(err.Error())
+		fmt.Println(err.Error())
 		return
 	}
 	fmt.Println("conifg :", hd)
