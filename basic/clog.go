@@ -3,10 +3,13 @@ package basic
 import (
 	"os"
 	logging "third/go-logging"
+
+	"github.com/astaxie/beego/session"
 )
 
 //Log xx
 var Log *logging.Logger
+var GlobalSessions *session.Manager
 
 //InitLogger xx
 func InitLogger() (*logging.Logger, error) {
@@ -19,4 +22,10 @@ func InitLogger() (*logging.Logger, error) {
 	logging.SetBackend(backend1Leveled)
 	Log = log
 	return log, nil
+}
+
+func init() {
+	a := &session.ManagerConfig{}
+	GlobalSessions, _ = session.NewManager("memory", a)
+	go GlobalSessions.GC()
 }

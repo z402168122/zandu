@@ -22,5 +22,6 @@ func main() {
 		return
 	}
 	fmt.Println("conifg :", hd)
+	beego.BConfig.WebConfig.Session.SessionOn = true
 	beego.Run()
 }
