@@ -1,4 +1,6 @@
-<html>
+<!doctype html>
+{{str2html "<!--[if lt IE 9]><html class=\"ie\"><![endif]--><!--[if gte IE 9]><!--><html><!--<![endif]-->"}}
+
   <head>
     <title>糖丸，两栖旅⾏服务专家</title>
     <meta name="keywords" content="糖丸,运动,旅游" />
@@ -19,9 +21,12 @@
 	  s.parentNode.insertBefore(hm, s);
 	})();
 	</script>
-
+	{{str2html "<!--[if lt IE 9]>"}}
+		<script src="/static/js/html5shiv.min.js"></script>
+	{{str2html "<![endif]-->"}}
   </head>
 <body>
+	
 <div class="top" style="position: relative">
   <img src="/static/img/n1.jpg" alt="" class="center" width="100%"   >
 </div>
