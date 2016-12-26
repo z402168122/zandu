@@ -12,15 +12,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/backgrounds.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/typography.css" />
-    <script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?0809d35200310f7b30e0b0eb663816d8";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
+    <script src="/static/jquery-ui/external/jquery/jquery.js"></script>
+	<script src="http://cdn.bootcss.com/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
 	{{str2html "<!--[if lt IE 9]>"}}
 		<script src="/static/js/html5shiv.min.js"></script>
 	{{str2html "<![endif]-->"}}
@@ -31,6 +24,10 @@
 <div class="top" style="position: relative">
   <img src="/static/img/n1.jpg" alt="" class="center" width="100%"   >
 </div>
+
+
+
+
 <section class="bg-color-dark bg-pattern-diag">
 	<div class="bg-image-white-light section-padding">
 	  <article class="container carousel-container">
@@ -41,59 +38,201 @@
 			</ul>           
 	        <div class="clearfix"></div>
 	    </div>
-	    <div class="cms-carousel">
-	    	{{range $index, $elem := .first}}
-	    	<div class="col1">
-				<div class="cms-item elem_0_{{ $index }}">
-                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
-			            <div class="relative">
-			            	{{with $elem.Img }}
-			                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
-			                <div class="main-img scroll-loading show">
-			                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
-			                	<div style="text-align: center;text-decoration:none;">
-			                		<span>扫码了解线路详情</span>
-			                	</div>
-			                </div>
-			                {{else}}
-			                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
-			                <div class="main-img scroll-loading show">
-			                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
-			                	<div style="text-align: center;text-decoration:none;">
-			                		<span>扫码了解线路详情</span>
-			                	</div>
-			                </div>
-			                {{end}}
-                      </div>
-		                <div class="detail">
-	               			 <div class="caption">
-	               			 	{{with $elem.Title }}
-	               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
-		                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
-									<span class="time elem_note">{{ $elem.Note }}</span>
-	               			 	{{else}}
-	               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
-		                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-									<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
-	               			 	{{end}}
-                    		</div>
-	            		</div>
-		            </a>    
-	        		<div class="admin" >
-	        		{{ if $.admin }}
-	        			<button onclick="show_edit(0,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
-	        		{{ end }}
-	        		</div>
-	        	</div>
-       		</div>
-       		{{end}}
-       		<div class="clearfix"></div>
-       		<div style="height: 50px;width: 100%;"></div>
-	    </div>
+	    
+		<div class="cms-carousel carousel-14827585135476">
+		    <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 1020px; height: 360px; margin: 0px; overflow: hidden;">
+		    	<div id="cmsCarousel_000" class="carousel-handler" style="text-align: left; float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 0px; margin: 0px; width: 9180px; height: 360px; z-index: auto;">    
+		     		<div class="row left" style="width: 1020px;">
+		     				{{range $index, $elem := .first}}
+						    	<div class="col1">
+									<div class="cms-item elem_0_{{ $index }}">
+					                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+								            <div class="relative">
+								            	{{with $elem.Img }}
+								                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+								                <div class="main-img scroll-loading show">
+								                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+								                	<div style="text-align: center;text-decoration:none;">
+								                		<span>扫码了解线路详情</span>
+								                	</div>
+								                </div>
+								                {{else}}
+								                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+								                <div class="main-img scroll-loading show">
+								                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+								                	<div style="text-align: center;text-decoration:none;">
+								                		<span>扫码了解线路详情</span>
+								                	</div>
+								                </div>
+								                {{end}}
+					                      </div>
+							                <div class="detail">
+						               			 <div class="caption">
+						               			 	{{with $elem.Title }}
+						               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+							                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+														<span class="time elem_note">{{ $elem.Note }}</span>
+						               			 	{{else}}
+						               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+							                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+														<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+						               			 	{{end}}
+					                    		</div>
+						            		</div>
+							            </a>    
+						        	</div>
+						        	<div class="admin" >
+						        		{{ if $.admin }}
+						        			<button onclick="show_edit(0,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+						        		{{ end }}
+					        		</div>
+					       		</div>
+					       		{{end}}
+		     		</div>
+		     		<div class="row left" style="width: 1020px;">
+		     			{{range $index, $elem := .first}}
+					    	<div class="col1">
+								<div class="cms-item elem_0_{{ $index }}">
+				                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+							            <div class="relative">
+							            	{{with $elem.Img }}
+							                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+							                <div class="main-img scroll-loading show">
+							                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+							                	<div style="text-align: center;text-decoration:none;">
+							                		<span>扫码了解线路详情</span>
+							                	</div>
+							                </div>
+							                {{else}}
+							                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+							                <div class="main-img scroll-loading show">
+							                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+							                	<div style="text-align: center;text-decoration:none;">
+							                		<span>扫码了解线路详情</span>
+							                	</div>
+							                </div>
+							                {{end}}
+				                      </div>
+						                <div class="detail">
+					               			 <div class="caption">
+					               			 	{{with $elem.Title }}
+					               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+						                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+													<span class="time elem_note">{{ $elem.Note }}</span>
+					               			 	{{else}}
+					               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+						                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+													<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+					               			 	{{end}}
+				                    		</div>
+					            		</div>
+						            </a>    
+					        		<div class="admin" >
+					        		{{ if $.admin }}
+					        			<button onclick="show_edit(0,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+					        		{{ end }}
+					        		</div>
+					        	</div>
+				       		</div>
+				       		{{end}}
+		     		</div>
+		     		<div class="row left" style="width: 1020px;">
+		     			{{range $index, $elem := .first}}
+					    	<div class="col1">
+								<div class="cms-item elem_0_{{ $index }}">
+				                    <a href="javascipt:void(0)" onclick="return false;"  class="link" title="" target="_blank">
+							            <div class="relative">
+							            	{{with $elem.Img }}
+							                <img src="{{ $elem.Img }}" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+							                <div class="main-img scroll-loading show">
+							                	<img src="{{ $elem.Code }}" class="elem_code"   style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+							                	<div style="text-align: center;text-decoration:none;">
+							                		<span>扫码了解线路详情</span>
+							                	</div>
+							                </div>
+							                {{else}}
+							                <img src="/static/img/demo.jpg" class="main-img scroll-loading hide elem_img"  width="320" height="240">
+							                <div class="main-img scroll-loading show">
+							                	<img src="/static/img/code.jpg" class="elem_code"  style="width: 220px; height: 220px;margin: 0 auto;display: block;" >
+							                	<div style="text-align: center;text-decoration:none;">
+							                		<span>扫码了解线路详情</span>
+							                	</div>
+							                </div>
+							                {{end}}
+				                      </div>
+						                <div class="detail">
+					               			 <div class="caption">
+					               			 	{{with $elem.Title }}
+					               			 		<h3 class="title elem_title">{{ $elem.Title }}</h3>
+						                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
+													<span class="time elem_note">{{ $elem.Note }}</span>
+					               			 	{{else}}
+					               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
+						                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
+													<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+					               			 	{{end}}
+				                    		</div>
+					            		</div>
+						            </a>    
+					        		<div class="admin" >
+					        		{{ if $.admin }}
+					        			<button onclick="show_edit(0,{{ $index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+					        		{{ end }}
+					        		</div>
+					        	</div>
+				       		</div>
+				       		{{end}}
+		     		</div>
+		     	</div>
+		     </div>
+		    <div class="clearfix"></div>
+		    <div class="pagination">
+		    	<div class="bullets" style="display: block;">
+		    	
+		    	</div>
+		    </div>
+		    <div class="clearfix"></div>
+		    <div class="prev" style="display: block;"></div>
+		    <div class="next disabled" style="display: block;"></div>
+		</div>
+
 	  </article>
 	
 	</div>
 </section>
+
+<script>
+    $(document).ready(function() {
+        $('#cmsCarousel_000').carouFredSel({
+            responsive: true,
+            circular:false,
+            infinite: false,
+            auto: false,
+            prev: '.carousel-14827585135476 .prev',
+            next: '.carousel-14827585135476 .next',
+            pagination  : ".carousel-14827585135476 .pagination .bullets",
+            items: 1,
+            scroll: {
+                items:1
+            },
+            swipe: {
+                touch: true,
+                mouse: false,
+                fx:'slide',
+                duration:200
+            }
+        });
+        $(".carousel-14827585135476").swipe({
+            excludedElements: "button, input, select, textarea, .noSwipe",
+            swipeLeft: function () {
+                $('#cmsCarousel_000').trigger('next', 1);
+            },
+            swipeRight: function () {
+                $('#cmsCarousel_000').trigger('prev', 1);
+            }
+        });
+    });
+</script>
 
 
 <section class="bg-color-dark-blue section-padding">
@@ -334,7 +473,6 @@
 	</div>
     
     <link href="/static/jquery-ui/jquery-ui.css" rel="stylesheet">
-	<script src="/static/jquery-ui/external/jquery/jquery.js"></script>
 	<script src="/static/jquery-ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="/static/js/ajaxfileupload.js"></script>
 	
@@ -466,6 +604,17 @@
     		
     </script>
 {{end}}
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0809d35200310f7b30e0b0eb663816d8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 </body>
 

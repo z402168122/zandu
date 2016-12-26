@@ -333,7 +333,7 @@ img {
 }
 
 .cms-carousel .prev, .cms-carousel .next {
-    background: transparent url(../images/ui/slideshow-nav-sprite.png) no-repeat 0 0;
+    background: transparent url(/static/img/slideshow-nav-sprite.png) no-repeat 0 0;
     display: block;
     width: 66px;
     height: 66px;
@@ -370,6 +370,11 @@ img {
     float: left;
     margin-left: 50%;
     margin-top: 30px;
+}
+
+.ie .cms-carousel .pagination .bullets{
+    float:none;
+    margin-left:0;
 }
 
 .cms-carousel .pagination .bullets {
@@ -631,76 +636,4 @@ img {
 
 .horizontal-items .sub-title-full {
     display: none !important;
-}
-
-/*== Villa Home Page ==*/
-.villa-banner {
-    position: relative;
-    width: 100%;
-}
-
-.villa-banner > img {
-    width: 100%;
-    padding-bottom: 185px;
-}
-
-.villa-banner-intro {
-    height: 338px;
-    left: 50%;
-    position: absolute;
-    margin: 0 0 0 -510px;
-    bottom: 20px;
-}
-
-.villa-banner-intro .villa-banner-lt {
-    width: 338px;
-    height: 338px;
-    background: url(../images/villa/villa-banner-lt.png) no-repeat center center;
-}
-
-.villa-banner-intro .villa-banner-rt {
-    width: 635px;
-    height: 105px;
-    margin-top: 210px;
-    text-align: center;
-}
-
-/*== Minipackage Index ==*/
-.main-banner-wrapper .round-message {
-    max-height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -183px;
-    margin-left: -510px;
-}
-
-.mini-anchor-link {
-    position: absolute;
-    top: -70px;
-    left: 0;
-}
-
-/*== Hotel Price ==*/
-.cms-item .caption .price {
-    font-size: 1.2em;
-    line-height: 1.4em;
-}
-
-.cms-item :hover .price {
-    display: block;
-    color: #FFFFFF;
-}
-
-.cms-item .price small {
-    font-size: 0.6em;
-}
-
-/* === prodct hover === */
-.cms-item :hover div.extra span.color-pink_:nth-child(1) {
-    display: none;
-}
-
-.cms-item :hover div.extra span.color-pink_:nth-child(2) {
-    margin-left: 0;
 }
