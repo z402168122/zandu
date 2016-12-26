@@ -39,7 +39,7 @@
 	        <div class="clearfix"></div>
 	    </div>
 	    
-		<div class="cms-carousel carousel-14827585135476">
+		<div class="cms-carousel carousel-1000">
 		    <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 1020px; height: 360px; margin: 0px; overflow: hidden;">
 		    	<div id="cmsCarousel_000" class="carousel-handler" style="text-align: left; float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 0px; margin: 0px; width: 9180px; height: 360px; z-index: auto;">    
 		     		<div class="row left" style="width: 1020px;">
@@ -208,9 +208,9 @@
             circular:false,
             infinite: false,
             auto: false,
-            prev: '.carousel-14827585135476 .prev',
-            next: '.carousel-14827585135476 .next',
-            pagination  : ".carousel-14827585135476 .pagination .bullets",
+            prev: '.carousel-1000 .prev',
+            next: '.carousel-1000 .next',
+            pagination  : ".carousel-1000 .pagination .bullets",
             items: 1,
             scroll: {
                 items:1
@@ -222,7 +222,7 @@
                 duration:200
             }
         });
-        $(".carousel-14827585135476").swipe({
+        $(".carousel-1000").swipe({
             excludedElements: "button, input, select, textarea, .noSwipe",
             swipeLeft: function () {
                 $('#cmsCarousel_000').trigger('next', 1);
