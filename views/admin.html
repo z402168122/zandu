@@ -84,7 +84,7 @@
 						        	</div>
 						        	<div class="admin" >
 						        		{{ if $.admin }}
-						        			{{with $elem.Title }}
+						        			{{ if gt $elem.Index -1 }}
 						        			<button onclick="show_edit(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
 						        			<button onclick="show_delete(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
 						        			{{else}}
@@ -220,7 +220,7 @@
 						        	</div>
 						        	<div class="admin" >
 						        		{{ if $.admin }}
-						        			{{with $elem.Title }}
+						        			{{ if gt $elem.Index -1 }}
 						        			<button onclick="show_edit(1,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
 						        			<button onclick="show_delete(1,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
 						        			{{else}}
@@ -302,7 +302,7 @@
 						        	</div>
 						        	<div class="admin" >
 						        		{{ if $.admin }}
-						        			{{ if ne $elem.Index -1 }}
+						        			{{ if gt $elem.Index -1 }}
 						        			<button onclick="show_edit(2,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
 						        			<button onclick="show_delete(2,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
 						        			{{else}}
