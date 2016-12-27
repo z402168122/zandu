@@ -13,34 +13,65 @@ type MainController struct {
 func (c *MainController) Get() {
 	hd := &models.HomeData{}
 	hd = hd.GetData()
-	c.Data["first"] = hd.First
+
 	tmp := make([]models.TripDes, 0)
+
+	c.Data["first"] = hd.First
+
 	FirstList := make([][]models.TripDes, 0)
+	tmp = make([]models.TripDes, 0)
 	for index, v := range hd.First {
 		v.Index = index
 		tmp = append(tmp, v)
+		if (index+1)%3 == 0 {
+			FirstList = append(FirstList, tmp)
+			tmp = make([]models.TripDes, 0)
+		}
+
+	}
+	if len(tmp) > 0 {
 		FirstList = append(FirstList, tmp)
+		tmp = make([]models.TripDes, 0)
 	}
 	c.Data["first_list"] = FirstList
-
+	// ----------
 	c.Data["second"] = hd.Second
-	tmp = make([]models.TripDes, 0)
 	SecondList := make([][]models.TripDes, 0)
-	for _, v := range hd.First {
+	tmp = make([]models.TripDes, 0)
+	for index, v := range hd.Second {
+		v.Index = index
 		tmp = append(tmp, v)
+		if (index+1)%3 == 0 {
+			SecondList = append(SecondList, tmp)
+			tmp = make([]models.TripDes, 0)
+		}
+
+	}
+	if len(tmp) > 0 {
 		SecondList = append(SecondList, tmp)
+		tmp = make([]models.TripDes, 0)
 	}
 	c.Data["second_list"] = SecondList
 
-	tmp = make([]models.TripDes, 0)
+	// ------------
+
 	c.Data["third"] = hd.Third
 	ThirdList := make([][]models.TripDes, 0)
-	for _, v := range hd.Third {
+	tmp = make([]models.TripDes, 0)
+	for index, v := range hd.Third {
+		v.Index = index
 		tmp = append(tmp, v)
+		if (index+1)%3 == 0 {
+			ThirdList = append(ThirdList, tmp)
+			tmp = make([]models.TripDes, 0)
+		}
+
+	}
+	if len(tmp) > 0 {
 		ThirdList = append(ThirdList, tmp)
+		tmp = make([]models.TripDes, 0)
 	}
 	c.Data["third_list"] = ThirdList
-	tmp = make([]models.TripDes, 0)
 
 	c.TplName = "admin.html"
 }
