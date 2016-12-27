@@ -494,6 +494,7 @@
 		
 		    
 		{{ if .user }}
+			
 		
 		{{ else }}
 		login_dialog = $( "#dialog-login" ).dialog({
@@ -593,10 +594,10 @@
     	}
     		
     </script>
-{{end}}
 
+{{ else }}
 
-<!-- <script>
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -604,7 +605,12 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script> -->
+</script> 
+
+{{end}}
+
+
+
 
 </body>
 
