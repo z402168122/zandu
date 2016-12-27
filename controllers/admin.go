@@ -21,11 +21,37 @@ func (c *AdminController) Get() {
 
 	hd := &models.HomeData{}
 	hd = hd.GetData()
-	c.Data["user"] = user
 	c.Data["admin"] = true
+	c.Data["user"] = user
+
 	c.Data["first"] = hd.First
+	tmp := make([]models.TripDes, 0)
+	FirstList := make([][]models.TripDes, 0)
+	for _, v := range hd.First {
+		tmp = append(tmp, v)
+		FirstList = append(FirstList, tmp)
+	}
+	c.Data["first_list"] = FirstList
+
 	c.Data["second"] = hd.Second
+	tmp = make([]models.TripDes, 0)
+	SecondList := make([][]models.TripDes, 0)
+	for _, v := range hd.First {
+		tmp = append(tmp, v)
+		SecondList = append(SecondList, tmp)
+	}
+	c.Data["second_list"] = SecondList
+
+	tmp = make([]models.TripDes, 0)
 	c.Data["third"] = hd.Third
+	ThirdList := make([][]models.TripDes, 0)
+	for _, v := range hd.Third {
+		tmp = append(tmp, v)
+		ThirdList = append(ThirdList, tmp)
+	}
+	c.Data["third_list"] = ThirdList
+	tmp = make([]models.TripDes, 0)
+
 	c.TplName = "admin.html"
 }
 
@@ -74,6 +100,97 @@ func (this *AdminController) Update() {
 	this.Ctx.WriteString(string(v))
 }
 
+//Delete xx
+func (this *AdminController) Delete() {
+
+	result := make(map[string]interface{}, 0)
+	result["err"] = ""
+	hd := &models.HomeData{}
+	hd = hd.GetData()
+	var err error
+	u := models.TripDes{}
+
+	user := this.GetSession("user")
+	if user == nil {
+		result["err"] = "没有登陆"
+	} else {
+		if err := this.ParseForm(&u); err != nil {
+			fmt.Println(err.Error())
+			result["err"] = err.Error()
+		} else {
+			if u.Type == 0 {
+				hd.First = append(hd.First[:u.Index], hd.First[u.Index+1:]...)
+			}
+			if u.Type == 1 {
+				hd.Second = append(hd.Second[:u.Index], hd.First[u.Index+1:]...)
+			}
+			if u.Type == 2 {
+				hd.Third = append(hd.Third[:u.Index], hd.First[u.Index+1:]...)
+			}
+			err = hd.Save()
+			if err != nil {
+				result["err"] = err.Error()
+			} else {
+				result["data"] = u.Index
+			}
+		}
+	}
+
+	v, err := json.Marshal(result)
+	if err == nil {
+
+	} else {
+		fmt.Println(err.Error())
+	}
+	this.Ctx.WriteString(string(v))
+}
+
+//Create  创建
+func (this *AdminController) Create() {
+
+	result := make(map[string]interface{}, 0)
+	result["err"] = ""
+	hd := &models.HomeData{}
+	hd = hd.GetData()
+	var err error
+	u := models.TripDes{}
+
+	user := this.GetSession("user")
+	if user == nil {
+		result["err"] = "没有登陆"
+	} else {
+		if err := this.ParseForm(&u); err != nil {
+			fmt.Println(err.Error())
+			result["err"] = err.Error()
+		} else {
+			if u.Type == 0 {
+				hd.First = append(hd.First, u)
+			}
+			if u.Type == 1 {
+				hd.Second = append(hd.Second, u)
+			}
+			if u.Type == 2 {
+				hd.Third = append(hd.Third, u)
+			}
+			err = hd.Save()
+			if err != nil {
+				result["err"] = err.Error()
+			} else {
+				result["data"] = u.Index
+			}
+		}
+	}
+
+	v, err := json.Marshal(result)
+	if err == nil {
+
+	} else {
+		fmt.Println(err.Error())
+	}
+	this.Ctx.WriteString(string(v))
+}
+
+//UploadImg xxx
 func (this *AdminController) UploadImg() {
 	path := fmt.Sprintf("/static/upload/%d.jpg", time.Now().Unix())
 	result := make(map[string]interface{}, 0)

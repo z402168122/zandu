@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 )
 
@@ -61,10 +60,10 @@ func (rec *HomeData) Init() error {
 	}
 	if err := json.Unmarshal(bytes, rec); err != nil {
 		err = fmt.Errorf("unmarshal error :%s", string(bytes))
-		log.Println(err.Error())
-		First := make([]TripDes, 3)
-		Second := make([]TripDes, 3)
-		Third := make([]TripDes, 3)
+		fmt.Println(err.Error())
+		First := make([]TripDes, 0)
+		Second := make([]TripDes, 0)
+		Third := make([]TripDes, 0)
 		rec.First = First
 		rec.Second = Second
 		rec.Third = Third
@@ -73,7 +72,7 @@ func (rec *HomeData) Init() error {
 			fmt.Println(err.Error())
 			return err
 		} else {
-
+			fmt.Println("初始化数据成功")
 		}
 	}
 	g_HomeData = rec
