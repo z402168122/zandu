@@ -27,11 +27,16 @@ func (c *AdminController) Get() {
 	tmp := make([]models.TripDes, 0)
 
 	c.Data["first"] = hd.First
-	firstTmp := append(hd.First, models.TripDes{})
+	firstTmp := append(hd.First, models.TripDes{Index: -1})
 	FirstList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range firstTmp {
-		v.Index = index
+		if v.Index == -1 {
+
+		} else {
+			v.Index = index
+		}
+
 		tmp = append(tmp, v)
 		if (index+1)%3 == 0 {
 			FirstList = append(FirstList, tmp)
@@ -46,11 +51,16 @@ func (c *AdminController) Get() {
 	c.Data["first_list"] = FirstList
 	// ----------
 	c.Data["second"] = hd.Second
-	SecondTmp := append(hd.Second, models.TripDes{})
+	SecondTmp := append(hd.Second, models.TripDes{Index: -1})
 	SecondList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range SecondTmp {
-		v.Index = index
+		if v.Index == -1 {
+
+		} else {
+			v.Index = index
+		}
+
 		tmp = append(tmp, v)
 		if (index+1)%3 == 0 {
 			SecondList = append(SecondList, tmp)
@@ -67,11 +77,16 @@ func (c *AdminController) Get() {
 	// ------------
 
 	c.Data["third"] = hd.Third
-	thirdTmp := append(hd.Third, models.TripDes{})
+	thirdTmp := append(hd.Third, models.TripDes{Index: -1})
 	ThirdList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range thirdTmp {
-		v.Index = index
+		if v.Index == -1 {
+
+		} else {
+			v.Index = index
+		}
+
 		tmp = append(tmp, v)
 		if (index+1)%3 == 0 {
 			ThirdList = append(ThirdList, tmp)
