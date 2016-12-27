@@ -260,7 +260,7 @@
         <div class="cms-carousel  margin-bottom-20 carousel-1002">
 		    <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 1020px; height: 400px; margin: 0px; overflow: hidden;">
 		    	<div id="cmsCarousel_002" class="carousel-handler" style="text-align: left; float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 0px; margin: 0px; width: 9180px; height: 360px; z-index: auto;">    
-		     		{{range $index, $first := .second_list}}
+		     		{{range $index, $first := .third_list}}
 		     		<div class="row left" style="width: 1020px;">
 		     				{{range $elemindex, $elem := $first }}
 						    	<div class="col1">
@@ -552,9 +552,8 @@
 			    		 obj.find(".elem_note").html(elem_note);
     					alert("修改成功");
     					dialog.dialog("close");
-    					if (curr_j == i){
-    						window.location.href=window.location.href;	
-    					}
+    					window.location.href=window.location.href;	
+    					
     					
     				}else{
     					alert(data.err);

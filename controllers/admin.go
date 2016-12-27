@@ -31,8 +31,8 @@ func (c *AdminController) Get() {
 	FirstList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range firstTmp {
-		if v.Index == -1 {
-
+		if index == (len(firstTmp) - 1) {
+			v.Index = -1
 		} else {
 			v.Index = index
 		}
@@ -55,7 +55,7 @@ func (c *AdminController) Get() {
 	SecondList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range SecondTmp {
-		if v.Index == -1 {
+		if index == (len(SecondTmp) - 1) {
 
 		} else {
 			v.Index = index
@@ -81,7 +81,7 @@ func (c *AdminController) Get() {
 	ThirdList := make([][]models.TripDes, 0)
 	tmp = make([]models.TripDes, 0)
 	for index, v := range thirdTmp {
-		if v.Index == -1 {
+		if index == (len(thirdTmp) - 1) {
 
 		} else {
 			v.Index = index
