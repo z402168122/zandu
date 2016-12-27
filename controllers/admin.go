@@ -107,13 +107,25 @@ func (this *AdminController) Update() {
 			result["err"] = err.Error()
 		} else {
 			if u.Type == 0 {
-				hd.First[u.Index] = u
+				if u.Index == -1 {
+					hd.First = append(hd.First, u)
+				} else {
+					hd.First[u.Index] = u
+				}
 			}
 			if u.Type == 1 {
-				hd.Second[u.Index] = u
+				if u.Index == -1 {
+					hd.Second = append(hd.Second, u)
+				} else {
+					hd.Second[u.Index] = u
+				}
 			}
 			if u.Type == 2 {
-				hd.Third[u.Index] = u
+				if u.Index == -1 {
+					hd.Third = append(hd.Third, u)
+				} else {
+					hd.Third[u.Index] = u
+				}
 			}
 			err = hd.Save()
 			if err != nil {
@@ -159,51 +171,6 @@ func (this *AdminController) Delete() {
 			}
 			if u.Type == 2 {
 				hd.Third = append(hd.Third[:u.Index], hd.First[u.Index+1:]...)
-			}
-			err = hd.Save()
-			if err != nil {
-				result["err"] = err.Error()
-			} else {
-				result["data"] = u.Index
-			}
-		}
-	}
-
-	v, err := json.Marshal(result)
-	if err == nil {
-
-	} else {
-		fmt.Println(err.Error())
-	}
-	this.Ctx.WriteString(string(v))
-}
-
-//Create  创建
-func (this *AdminController) Create() {
-
-	result := make(map[string]interface{}, 0)
-	result["err"] = ""
-	hd := &models.HomeData{}
-	hd = hd.GetData()
-	var err error
-	u := models.TripDes{}
-
-	user := this.GetSession("user")
-	if user == nil {
-		result["err"] = "没有登陆"
-	} else {
-		if err := this.ParseForm(&u); err != nil {
-			fmt.Println(err.Error())
-			result["err"] = err.Error()
-		} else {
-			if u.Type == 0 {
-				hd.First = append(hd.First, u)
-			}
-			if u.Type == 1 {
-				hd.Second = append(hd.Second, u)
-			}
-			if u.Type == 2 {
-				hd.Third = append(hd.Third, u)
 			}
 			err = hd.Save()
 			if err != nil {

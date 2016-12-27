@@ -14,5 +14,4 @@ func init() {
 	beego.Router("/admin/upload_img", &controllers.AdminController{}, "post:UploadImg")
 	beego.Router("/admin/update", &controllers.AdminController{}, "post:Update")
 	beego.Router("/admin/delete", &controllers.AdminController{}, "post:Delete")
-	beego.Router("/admin/create", &controllers.AdminController{}, "post:Create")
 }

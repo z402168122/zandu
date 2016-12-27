@@ -40,7 +40,7 @@
 	    </div>
 	    
 		<div class="cms-carousel carousel-1000">
-		    <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 1020px; height: 360px; margin: 0px; overflow: hidden;">
+		    <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 1020px; height: 400px; margin: 0px; overflow: hidden;">
 		    	<div id="cmsCarousel_000" class="carousel-handler" style="text-align: left; float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 0px; margin: 0px; width: 9180px; height: 360px; z-index: auto;">    
 		     		{{range $index, $first := .first_list}}
 		     		<div class="row left" style="width: 1020px;">
@@ -74,9 +74,9 @@
 							                    		<div class="sub-title elem_sub_title" >{{ $elem.SubTitle }}</div>
 														<span class="time elem_note">{{ $elem.Note }}</span>
 						               			 	{{else}}
-						               			 		<h3 class="title elem_title">糖丸贡嘎环线，入门级</h3>
-							                    		<div class="sub-title elem_sub_title" >行程亮点：高原观星，森林穿越，骑行亚洲最大钙化流，两次近赏蜀山之王</div>
-														<span class="time elem_note">出行时间：5月2日、6月3日、7月2日</span>
+						               			 		<h3 class="title elem_title"></h3>
+							                    		<div class="sub-title elem_sub_title" ></div>
+														<span class="time elem_note"></span>
 						               			 	{{end}}
 					                    		</div>
 						            		</div>
@@ -84,7 +84,12 @@
 						        	</div>
 						        	<div class="admin" >
 						        		{{ if $.admin }}
+						        			{{with $elem.Title }}
 						        			<button onclick="show_edit(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
+						        			<button onclick="show_delete(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
+						        			{{else}}
+						        			<button onclick="show_edit(0,-1)" id="button" class="ui-button ui-corner-all ui-widget" >创建数据</button>
+						        			{{end}}
 						        		{{ end }}
 					        		</div>
 					       		</div>
@@ -122,23 +127,9 @@
             items: 1,
             scroll: {
                 items:1
-            },
-            swipe: {
-                touch: true,
-                mouse: false,
-                fx:'slide',
-                duration:200
             }
         });
-        $(".carousel-1000").swipe({
-            excludedElements: "button, input, select, textarea, .noSwipe",
-            swipeLeft: function () {
-                $('#cmsCarousel_000').trigger('next', 1);
-            },
-            swipeRight: function () {
-                $('#cmsCarousel_000').trigger('prev', 1);
-            }
-        });
+        
     });
 </script>
 
@@ -408,11 +399,11 @@
 		          success: function (data, status) {
 		          	if(data.err == ""){
 		          		var obj = $('#'+id);
-		          		var o  = obj.attr("for")
+		          		var o  = obj.attr("for");
 		          		$("#"+o).attr("src",data.url);
 						          		
 		          	}else{
-		          		alert(data.err)
+		          		alert(data.err);
 		          	}
 		          }, 
 		          error: function (data, status, e)//服务器响应失败处理函数
@@ -471,7 +462,7 @@
     		var elem_title = $("#form_title").val();
     		var elem_sub_title = $("#form_sub_title").val();
     		var elem_note = $("#form_note").val();
-    		data = {}
+    		var data = {};
     		data["img"] = elem_img;
     		data["code"] = elem_code;
     		data["title"] = elem_title;
@@ -491,13 +482,29 @@
     					alert("修改成功");
     					dialog.dialog("close");
     				}else{
-    					alert(data.err)
+    					alert(data.err);
     				}
-    		},'json')
+    		},'json');
     	}
     	
+     function show_delete(i,j){
+    		var data = {};
+    		data["type"] = i;
+    		data["index"] = j;
+    		$.post("/admin/delete",data,function(data){
+    				if(data.err == ""){
+    					alert("删除成功");
+    					dialog.dialog("close");
+    				}else{
+    					alert(data.err);
+    				}
+    		},'json');
+     	
+     }
+    	
+    	
     function login_in(){
-    		var data = {}
+    		var data = {};
     		data["user"] = $("#form_user").val();
     		data["password"] = $("#form_password").val();
     		 $.post("/admin/login",data,function(data){
@@ -505,9 +512,9 @@
     				alert("登录成功");
     				login_dialog.dialog("close");
     			}else{
-    				alert(data.err)
+    				alert(data.err);
     			}
-    		},'json')
+    		},'json');
     	}
     		
     </script>
