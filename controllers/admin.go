@@ -123,6 +123,7 @@ func (this *AdminController) Update() {
 		} else {
 			if u.Type == 0 {
 				if u.Index == -1 {
+					u.Index = len(hd.First) + 1
 					hd.First = append(hd.First, u)
 				} else {
 					hd.First[u.Index] = u
@@ -130,6 +131,7 @@ func (this *AdminController) Update() {
 			}
 			if u.Type == 1 {
 				if u.Index == -1 {
+					u.Index = len(hd.Second) + 1
 					hd.Second = append(hd.Second, u)
 				} else {
 					hd.Second[u.Index] = u
@@ -137,6 +139,7 @@ func (this *AdminController) Update() {
 			}
 			if u.Type == 2 {
 				if u.Index == -1 {
+					u.Index = len(hd.Third) + 1
 					hd.Third = append(hd.Third, u)
 				} else {
 					hd.Third[u.Index] = u
