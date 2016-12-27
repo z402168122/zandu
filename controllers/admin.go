@@ -23,14 +23,26 @@ func (c *AdminController) Get() {
 	hd = hd.GetData()
 	c.Data["admin"] = true
 	c.Data["user"] = user
+	tmp := make([]models.TripDes, 0)
 
 	c.Data["first"] = hd.First
-	tmp := make([]models.TripDes, 0)
+	firstTmp := append(hd.First, models.TripDes{})
 	FirstList := make([][]models.TripDes, 0)
-	for _, v := range hd.First {
+	tmp = make([]models.TripDes, 0)
+	for index, v := range firstTmp {
+		v.Index = index
 		tmp = append(tmp, v)
-		FirstList = append(FirstList, tmp)
+		if (index+1)%3 == 0 {
+			FirstList = append(FirstList, tmp)
+			tmp = make([]models.TripDes, 0)
+		}
+
 	}
+	if len(tmp) > 0 {
+		FirstList = append(FirstList, tmp)
+		tmp = make([]models.TripDes, 0)
+	}
+	fmt.Println(FirstList, len(FirstList))
 	c.Data["first_list"] = FirstList
 
 	c.Data["second"] = hd.Second

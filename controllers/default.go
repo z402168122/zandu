@@ -16,7 +16,8 @@ func (c *MainController) Get() {
 	c.Data["first"] = hd.First
 	tmp := make([]models.TripDes, 0)
 	FirstList := make([][]models.TripDes, 0)
-	for _, v := range hd.First {
+	for index, v := range hd.First {
+		v.Index = index
 		tmp = append(tmp, v)
 		FirstList = append(FirstList, tmp)
 	}
