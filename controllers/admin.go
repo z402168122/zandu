@@ -185,10 +185,10 @@ func (this *AdminController) Delete() {
 				hd.First = append(hd.First[:u.Index], hd.First[u.Index+1:]...)
 			}
 			if u.Type == 1 {
-				hd.Second = append(hd.Second[:u.Index], hd.First[u.Index+1:]...)
+				hd.Second = append(hd.Second[:u.Index], hd.Second[u.Index+1:]...)
 			}
 			if u.Type == 2 {
-				hd.Third = append(hd.Third[:u.Index], hd.First[u.Index+1:]...)
+				hd.Third = append(hd.Third[:u.Index], hd.Third[u.Index+1:]...)
 			}
 			err = hd.Save()
 			if err != nil {
