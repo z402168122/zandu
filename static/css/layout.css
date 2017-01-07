@@ -107,6 +107,11 @@
     margin-right:auto;
 }
 
+.lazy{
+	
+}
+img{vertical-align:bottom;}  
+
 .block {
     display:block;
 }

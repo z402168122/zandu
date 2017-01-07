@@ -49,7 +49,7 @@
 
 /* === Image background === */
 .bg-image-clouds {
-    background-image:url(/static/img/bg-image-clouds.jpg);
+    background-image:none;
     background-position:top center;
     background-size:auto 100%;
     background-color: #D3E9F6; /* Even though image backgrounds dont have colors set, making sure that clouds continue with solid color */

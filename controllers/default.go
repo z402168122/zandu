@@ -73,5 +73,5 @@ func (c *MainController) Get() {
 	}
 	c.Data["third_list"] = ThirdList
 
-	c.TplName = "admin.html"
+	c.TplName = "index.html"
 }
