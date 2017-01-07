@@ -80,16 +80,7 @@
 						            		</div>
 							            </a>    
 						        	</div>
-						        	<div class="admin" >
-						        		{{ if $.admin }}
-						        			{{ if gt $elem.Index -1 }}
-						        			<button onclick="show_edit(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
-						        			<button onclick="show_delete(0,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
-						        			{{else}}
-						        			<button onclick="show_edit(0,-1)" id="button" class="ui-button ui-corner-all ui-widget" >创建数据</button>
-						        			{{end}}
-						        		{{ end }}
-					        		</div>
+						        	
 					       		</div>
 					       		{{end}}
 		     		</div>
@@ -243,16 +234,7 @@
 						            		</div>
 							            </a>    
 						        	</div>
-						        	<div class="admin" >
-						        		{{ if $.admin }}
-						        			{{ if gt $elem.Index -1 }}
-						        			<button onclick="show_edit(1,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
-						        			<button onclick="show_delete(1,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
-						        			{{else}}
-						        			<button onclick="show_edit(1,-1)" id="button" class="ui-button ui-corner-all ui-widget" >创建数据</button>
-						        			{{end}}
-						        		{{ end }}
-					        		</div>
+						        	
 					       		</div>
 					       		{{end}}
 		     		</div>
@@ -325,16 +307,7 @@
 						            		</div>
 							            </a>    
 						        	</div>
-						        	<div class="admin" >
-						        		{{ if $.admin }}
-						        			{{ if gt $elem.Index -1 }}
-						        			<button onclick="show_edit(2,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >修改上面数据</button>
-						        			<button onclick="show_delete(2,{{ $elem.Index }})" id="button" class="ui-button ui-corner-all ui-widget" >删除上面数据</button>
-						        			{{else}}
-						        			<button onclick="show_edit(2,-1)" id="button" class="ui-button ui-corner-all ui-widget" >创建数据</button>
-						        			{{end}}
-						        		{{ end }}
-					        		</div>
+						        	
 					       		</div>
 					       		{{end}}
 		     		</div>
@@ -388,239 +361,6 @@
 }
 </style>
 
-{{if .admin}}
-	{{ if .user }}
-	
-	{{ else }}
-	
-	<div id="dialog-login" title="登录系统">
-	<div>
-		<table style="width: 100%">
-			<tr>
-				<td style="text-align: right;padding:20px 15px;">帐号:</td>
-				<td >
-					<input type="text"  id="form_user" style="width: 250px;height: 30px;" />
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align: right;padding:20px 15px;">密码:</td>
-				<td >
-					<input type="password" id="form_password" style="width: 250px;height: 30px;" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="text-align: center;">
-					<button onclick="login_in(this)" class="ui-button ui-corner-all ui-widget" >登 录</button>
-				</td>
-			</tr>
-		</table>
-	</div>
-	</div>
-	
-	
-	{{ end }}
-	<div id="dialog-form" title="修改数据">
-	<div>
-		<table style="width: 100%">
-			<tr>
-				<td width="90" style="text-align: right;padding-right: 15px;">图片:</td>
-				<td width="80">
-					<input class="input_file" size="1" for="form_img"  name="temp_img" onchange="upload_img(this)" type="file">
-				</td>
-				<td style="text-align: center;">
-					<img src="/static/img/demo.jpg" id="form_img"  width="160" height="120">
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align: right;padding-right: 15px;">二维码:</td>
-				<td>
-					<input class="input_file" size="1" for="form_code" name="temp_img" onchange="upload_img(this)" type="file">
-				</td>
-				<td style="text-align: center;">
-					<img src="/static/img/code.jpg"  id="form_code"  width="120" height="120"  >
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align: right;padding-right: 15px;">标题:</td>
-				<td colspan="2">
-					<input type="text" id="form_title" style="width: 300px;" />
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align: right;padding-right: 15px;">副标题:</td>
-				<td colspan="2">
-					<input type="text" id="form_sub_title" style="width: 300px;" />
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align: right;padding-right: 15px;">备注:</td>
-				<td colspan="2">
-					<input type="text" id="form_note" style="width: 300px;" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3" style="text-align: center;">
-					<button onclick="save_data(this)" class="ui-button ui-corner-all ui-widget" >保存数据</button>
-				</td>
-			</tr>
-		</table>
-	</div>
-	</div>
-    
-    <link href="/static/jquery-ui/jquery-ui.css" rel="stylesheet">
-	<script src="/static/jquery-ui/jquery-ui.js"></script>
-	<script type="text/javascript" src="/static/js/ajaxfileupload.js"></script>
-	
-<script type="text/javascript">
-	function get_or_create_id(el){
-		var obj = $(el).eq(0);
-		var id = obj.attr('id');
-		if(id){return id;}
-		var id = 'auto_'+(new Date()).getTime();
-			obj.attr('id',id);
-		return id;
-	}
-    
-    
-    
-    var curr_i = 0;
-    var curr_j = 0;
-	function upload_img(el){
-		var id = get_or_create_id(el);
-			$.ajaxFileUpload({
-		          url:'/admin/upload_img', 
-		          secureuri:false,
-		          fileElementId:id,
-		          dataType: 'json',
-		          success: function (data, status) {
-		          	if(data.err == ""){
-		          		var obj = $('#'+id);
-		          		var o  = obj.attr("for");
-		          		$("#"+o).attr("src",data.url);
-						          		
-		          	}else{
-		          		alert(data.err);
-		          	}
-		          }, 
-		          error: function (data, status, e)//服务器响应失败处理函数
-                    {
-                        alert(e);
-                    }
-		         });
-		}
-
-	    dialog = $( "#dialog-form" ).dialog({
-		      autoOpen: false,
-		      height: 500,
-		      width: 600,
-		      modal: true
-		    });
-		    
-		
-		    
-		{{ if .user }}
-			
-		
-		{{ else }}
-		login_dialog = $( "#dialog-login" ).dialog({
-		      autoOpen: open,
-		      closeOnEscape: false,
-		      height: 300,
-		      width: 400,
-		      modal: true,
-		      open: function (event, ui) {
-                 $(".ui-dialog-titlebar-close", $(this).parent()).hide();
-            	}
-		    });
-		{{ end }}
-    	function show_edit(i,j){
-    		curr_i = i;
-    		curr_j = j;
-    		
-    		var obj = $("."+"elem_"+i+"_"+j);
-    		var elem_img = obj.find(".elem_img").attr("src");
-    		var elem_code = obj.find(".elem_code").attr("src");
-    		var elem_title = obj.find(".elem_title").html();
-    		var elem_sub_title = obj.find(".elem_sub_title").html();
-    		var elem_note = obj.find(".elem_note").html();
-    		
-    		$("#form_img").attr("src",elem_img);
-    		$("#form_code").attr("src",elem_code);
-    		$("#form_title").val(elem_title);
-    		$("#form_sub_title").val(elem_sub_title);
-    		$("#form_note").val(elem_note);
-    	
-    		dialog.dialog("open");
-            //$('#fm1').form('load',row);
-    	}
-    	function save_data(){
-    		var elem_img = $("#form_img").attr("src");
-    		var elem_code = $("#form_code").attr("src");
-    		var elem_title = $("#form_title").val();
-    		var elem_sub_title = $("#form_sub_title").val();
-    		var elem_note = $("#form_note").val();
-    		var data = {};
-    		data["img"] = elem_img;
-    		data["code"] = elem_code;
-    		data["title"] = elem_title;
-    		data["sub_title"] = elem_sub_title;
-    		data["note"] = elem_note;
-    		data["type"] = curr_i;
-    		data["index"] = curr_j;
-    		$.post("/admin/update",data,function(data){
-    				if(data.err == ""){
-			    		var obj = $("."+"elem_"+curr_i+"_"+curr_j);
-			    		 obj.find(".elem_img").attr("src",elem_img);
-			    		 obj.find(".elem_code").attr("src",elem_code);
-			    		 obj.find(".elem_title").html(elem_title);
-			    		 obj.find(".elem_sub_title").html(elem_sub_title);
-			    		 obj.find(".elem_note").html(elem_note);
-    					alert("修改成功");
-    					dialog.dialog("close");
-    					window.location.href=window.location.href;	
-    					
-    					
-    				}else{
-    					alert(data.err);
-    				}
-    		},'json');
-    	}
-    	
-     function show_delete(i,j){
-    		var data = {};
-    		data["type"] = i;
-    		data["index"] = j;
-    		$.post("/admin/delete",data,function(data){
-    				if(data.err == ""){
-    					alert("删除成功");
-    					dialog.dialog("close");
-    					window.location.href=window.location.href;
-    				}else{
-    					alert(data.err);
-    				}
-    		},'json');
-     	
-     }
-    	
-    	
-    function login_in(){
-    		var data = {};
-    		data["user"] = $("#form_user").val();
-    		data["password"] = $("#form_password").val();
-    		 $.post("/admin/login",data,function(data){
-    			if(data.err == ""){
-    				alert("登录成功");
-    				login_dialog.dialog("close");
-    			}else{
-    				alert(data.err);
-    			}
-    		},'json');
-    	}
-    		
-    </script>
-
-{{ else }}
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -630,11 +370,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script> 
-
-{{end}}
-
-
-
 
 </body>
 
